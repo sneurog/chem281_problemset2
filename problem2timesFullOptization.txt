@@ -1,0 +1,8 @@
+Output for question 2 times:
+Printing timer for 'Total population_count': 0.04 microseconds.
+Printing timer for 'Total count_trailing_zeros': 0.00 microseconds.
+Printing timer for 'Total popcount_Noloop': 0.04 microseconds.
+Printing timer for 'Total countr_zero_Noloop': 0.00 microseconds.
+Printing timer for 'Total store_and_sort_bitsets_WoLoops': 7.58 microseconds.
+Printing timer for 'Total store_and_sort_bitsets_loops': 7.75 microseconds.
+Printing timer for 'Total count_occupied_orbitals_optimized': 0.04 microseconds.
