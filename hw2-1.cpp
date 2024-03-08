@@ -19,35 +19,57 @@ float reverse_process(float x, int n) {
     return original_value;
 }
 
-int main() {
-    std::vector<int> steps = {2, 5, 10, 20, 30, 40};
-    std::cout << "Output for question 1 times:" << std::endl;
 
-    #ifdef ENABLE_TIMERS
+
+int main() {
+    // Vector of steps for testing
+    std::vector<int> steps = {2, 5, 10, 20, 30, 40};
+
+    // Check if timers are enabled
+#ifdef ENABLE_TIMERS
     std::cout << "Timers are enabled." << std::endl;
 
-    MyTimer::Timer totalTimerRecursive("Total recursive", true);  
-    MyTimer::Timer totalTimerReverse("Total reverse", true);
+    // Create timers
+    MyTimer::Timer totalTimer("Total", true);  
+    MyTimer::Timer recursiveTimer("Recursive", true);
+    MyTimer::Timer reverseTimer("Reverse", true);
     
-    totalTimerRecursive.start();
+    // Start total timer
+    totalTimer.start();
+    
+    // Start recursive timer
+    recursiveTimer.start();
+    // Run recursive_sqrt function for each step
     for (int n : steps) {
         float x = 100.0f;
         float sqrtValue = recursive_sqrt(x, n);
     }
-    totalTimerRecursive.stop();
-    totalTimerRecursive.print();
-
-    totalTimerReverse.start();
+    // Stop recursive timer
+    recursiveTimer.stop();
+    
+    // Start reverse timer
+    reverseTimer.start();
+    // Run reverse_process function for each step
     for (int n : steps) {
         float x = 100.0f;
         float sqrtValue = recursive_sqrt(x, n);
         float reconstructedValue = reverse_process(sqrtValue, n);
     }
-    totalTimerReverse.stop();
-    totalTimerReverse.print();
-    #else
+    // Stop reverse timer
+    reverseTimer.stop();
+    
+    // Stop total timer
+    totalTimer.stop();
+
+    // Print the durations of each timer
+    totalTimer.print();
+    recursiveTimer.print();
+    reverseTimer.print();
+#else
+    // If timers are disabled
     std::cout << "*Timers are disabled. Please Enable Timers in the terminal by compiling with -DENABLE_TIMERS*  " << std::endl;
-    #endif
+#endif
 
     return 0;
 }
+
