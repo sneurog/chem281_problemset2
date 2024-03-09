@@ -1,8 +1,10 @@
 Output for question 2 times:
-Printing timer for 'Total population_count': 326918.29 microseconds.
-Printing timer for 'Total count_trailing_zeros': 15089.50 microseconds.
-Printing timer for 'Total popcount_Noloop': 12162.75 microseconds.
-Printing timer for 'Total countr_zero_Noloop': 12909.83 microseconds.
-Printing timer for 'Total store_and_sort_bitsets_WoLoops': 56.79 microseconds.
-Printing timer for 'Total store_and_sort_bitsets_loops': 56.58 microseconds.
-Printing timer for 'Total count_occupied_orbitals_optimized': 24661.79 microseconds.
+Printing timer for 'Total population_count': 329247.08 microseconds.
+Printing timer for 'Total count_trailing_zeros': 15246.96 microseconds.
+Printing timer for 'Total popcount_Noloop': 12337.75 microseconds.
+Printing timer for 'Total countr_zero_Noloop': 12613.04 microseconds.
+Printing timer for 'Total countr_zero from std': 2435.29 microseconds.
+Printing timer for 'Total popcount std': 1895.79 microseconds.
+Printing timer for 'Total store_and_sort_bitsets_WoLoops': 42.75 microseconds.
+Printing timer for 'Total store_and_sort_bitsets_loops': 45.46 microseconds.
+Printing timer for 'Total count_occupied_orbitals_optimized': 23037.12 microseconds.
