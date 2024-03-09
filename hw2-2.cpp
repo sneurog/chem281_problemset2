@@ -1,9 +1,12 @@
 #include <iostream>
+#include <bit>
 #include <bitset>
+#include <cstdint>
+#include <iostream>
 #include <map>
 #include <stdexcept>
 #include <random>
-
+#include <optional>
 // Section i
 
 
@@ -58,6 +61,9 @@ int countr_zero_Noloop(const std::bitset<N>& bits_set) {
     }
 }
 
+
+
+static_assert(std::popcount(0xFULL) == 4);
 
 
 // Section iv 
@@ -150,12 +156,30 @@ int main() {
     // Bit declaration
     // Section i
    std::bitset<64> bs(0b00011100);
+
+     // Define a std::uint8_t value
+    std::uint8_t bs_u = 0b00011100;
+
+ 
+
     std::cout << "Number of bits set: " << population_count(bs) << std::endl;
     std::cout << "Number of trailing zeros: " << count_trailing_zeros(bs) << std::endl;
 
     // Section ii
     std::cout << "Number of bits set: " << popcount_Noloop(bs) << std::endl;
     std::cout << "Number of trailing zeros: " << countr_zero_Noloop(bs) << std::endl;
+
+    // use the the standard library to test the popcount and countr_zer functions
+
+
+    std::cout << "Number of trailing zeros from std :" << std::countr_zero(bs_u) <<  std::endl;
+    
+   
+    std::cout << "Number of bits set from std  :" << std::popcount(bs_u) <<  std::endl;
+
+
+
+
 
 
     // Section iv
