@@ -1,8 +1,12 @@
 #include <iostream>
+#include <bit>
 #include <bitset>
+#include <cstdint>
+#include <iostream>
 #include <map>
 #include <stdexcept>
 #include <random>
+#include <optional>
 #include "timer.h"
 
 
@@ -149,13 +153,22 @@ int main() {
     // Section iii
     #ifdef ENABLE_TIMERS
      std::cout << "Output for question 2 times:" << std::endl;
-     std::bitset<64> bs(0b00011100);
+       std::bitset<64> bs(0b00011100);
+
+     // Define a std::uint8_t value
+    std::uint8_t bs_u = 0b00011100;
+
+ 
      const int iterations = 1000000;  // Number of iterations for timing
 
     MyTimer::Timer totalTimerpopulation_count("Total population_count", true);  
     MyTimer::Timer totalTimercount_trailing_zeros("Total count_trailing_zeros", true);
     MyTimer::Timer totalTimerpopcount_Noloop("Total popcount_Noloop", true);  
     MyTimer::Timer totalTimercountr_zero_Noloop("Total countr_zero_Noloop", true);  
+
+    MyTimer::Timer totalTimercountr_zero_std("Total countr_zero from std", true); 
+    MyTimer::Timer totalTimerpopcount_std("Total popcount std", true); 
+
     MyTimer::Timer totalTimerstore_and_sort_bitsets_WoLoops("Total store_and_sort_bitsets_WoLoops", true); 
     MyTimer::Timer totalTimerstore_and_sort_bitsets_loops("Total store_and_sort_bitsets_loops", true);  
     MyTimer::Timer totalTimercount_occupied_orbitals_optimized("Total count_occupied_orbitals_optimized", true);
@@ -191,6 +204,25 @@ int main() {
     }
     totalTimercountr_zero_Noloop.stop();
     totalTimercountr_zero_Noloop.print();
+
+    totalTimercountr_zero_std.start();
+    for (int i = 0; i < iterations; ++i) {
+    dummyResult += std::countr_zero(bs_u);
+    }
+        totalTimercountr_zero_std.stop();
+        totalTimercountr_zero_std.print();  
+
+
+
+    totalTimerpopcount_std.start();
+    for (int i = 0; i < iterations; ++i) {
+        dummyResult += std::popcount(bs_u);
+    }
+        totalTimerpopcount_std.stop();
+        totalTimerpopcount_std.print();
+
+
+
 
 
 
