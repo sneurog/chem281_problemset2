@@ -1,4 +1,0 @@
-Timers are enabled.
-Printing timer for 'Total': 0.33 microseconds.
-Printing timer for 'Recursive': 0.08 microseconds.
-Printing timer for 'Reverse': 0.04 microseconds.
