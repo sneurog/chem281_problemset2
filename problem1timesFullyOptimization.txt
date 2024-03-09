@@ -1,4 +1,3 @@
-problem1timesFullyOptimization O3
 Timers are enabled.
 Printing timer for 'Total': 0.21 microseconds.
 Printing timer for 'Recursive': 0.04 microseconds.
